@@ -1,7 +1,7 @@
 name: "Bump Version File"
 description: "Bumps version in version.txt and adds to env"
 inputs:
-  path: # id of input
+  path:
     description: "path to version.txt"
     required: true
     default: "./version.txt"
