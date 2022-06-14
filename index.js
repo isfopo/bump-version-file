@@ -4,25 +4,33 @@ const fs = require("fs");
 
 try {
   const path = core.getInput("path");
+  const token = core.getInput("token");
 
-  // get version number from file
-  const version = fs.readFileSync(path, "utf-8");
-  let version = fs.readFileSync(path, "utf-8");
+  // get versionNumber number from file
+  let versionNumber = fs.readFileSync(path, "utf-8");
 
-  // bump patch version
-  const splitVersion = version.split(".");
+  // bump patch versionNumber
+  const splitVersion = versionNumber.split(".");
   splitVersion[2] = parseInt(splitVersion[2]) + 1;
 
-  version = splitVersion.join(".");
+  versionNumber = splitVersion.join(".");
 
-  // write new version back to file
-  fs.writeFileSync(path, version);
+  // write new versionNumber back to file
+  fs.writeFileSync(path, versionNumber);
 
   // commit change
+  // if (token) {
+  //   const octokit = github.getOctokit(token);
 
-  // output new version
+  //   await octokit.rest.git.createCommit({
+  //     message: "automated versionNumber bump",
+  //     owner:
+  //   })
+  // }
 
-  core.setOutput("content", version);
+  // output new versionNumber
+
+  core.setOutput("content", versionNumber);
 } catch (error) {
   core.setFailed(error.message);
 }
