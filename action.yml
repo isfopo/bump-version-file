@@ -5,9 +5,6 @@ inputs:
     description: "path to version.txt"
     required: true
     default: "./version.txt"
-  token:
-    description: "github token"
-    required: false
 outputs:
   content:
     description: "bumped version number"
