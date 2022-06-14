@@ -7,6 +7,7 @@ try {
 
   // get version number from file
   const version = fs.readFileSync(path, "utf-8");
+  let version = fs.readFileSync(path, "utf-8");
 
   // bump patch version
   const splitVersion = version.split(".");
