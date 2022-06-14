@@ -1,13 +1,13 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Bump Version File"
+description: "Bumps version in version.txt and adds to env"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  path: # id of input
+    description: "path to version.txt"
     required: true
-    default: 'World'
+    default: "./version.txt"
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  content:
+    description: "bumped version number"
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: "node16"
+  main: "index.js"
